@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Mutual Fund Broker Web Application
 
 This is a backend application built with FastAPI that allows users to register, login, add mutual fund investments, and track their portfolio. It integrates with the RapidAPI Mutual Fund NAV API.
@@ -52,3 +53,7 @@ Use http://localhost:8000/docs for the Swagger UI.
 # Running Tests
 
 pytest
+=======
+# Mutual_fund_broker
+Used Rapid API for mutual fund broker along with Python,FastAPI and tested by POSTMAN, Pytest 
+>>>>>>> 67ba360d59f9f6271673631bc036a0dfe66a21f7
