@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Mutual Fund Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f0f4f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e88e5;
+      color: #fff;
+      padding: 1.2rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .portfolio-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #1e88e5;
+    }
+
+    .card-detail {
+      margin: 0.3rem 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Mutual Fund Portfolio</h1>
+  </header>
+
+  <div class="portfolio-container" id="portfolio">
+    <!-- Portfolio cards will be injected here -->
+  </div>
+
+  <footer>
+    &copy; 2025 Mutual Fund Broker App
+  </footer>
+
+  <script>
+    // Example: Simulate fetched portfolio data
+    const investments = [
+      {
+        fund_name: "SBI Bluechip Fund",
+        amount_invested: 10000,
+        current_value: 11250
+      },
+      {
+        fund_name: "Axis Small Cap Fund",
+        amount_invested: 15000,
+        current_value: 13800
+      },
+      {
+        fund_name: "HDFC Flexi Cap Fund",
+        amount_invested: 20000,
+        current_value: 22100
+      }
+    ];
+
+    const portfolioContainer = document.getElementById("portfolio");
+
+    investments.forEach(investment => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <div class="card-title">${investment.fund_name}</div>
+        <div class="card-detail">Invested Amount: ₹${investment.amount_invested}</div>
+        <div class="card-detail">Current Value: ₹${investment.current_value}</div>
+        <div class="card-detail">Return: 
+          <strong style="color: ${investment.current_value > investment.amount_invested ? 'green' : 'red'};">
+            ₹${(investment.current_value - investment.amount_invested).toFixed(2)}
+          </strong>
+        </div>
+      `;
+      portfolioContainer.appendChild(card);
+    });
+  </script>
+</body>
+</html>
